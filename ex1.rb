@@ -45,12 +45,13 @@ def check_syntax(str)
   return open.empty?
 end
 
-puts check_syntax("(this)[] is some text")
+puts check_syntax("<html> (this)[] is some text</html>")
 puts "true"
-puts check_syntax("(this)] is some text")
+puts check_syntax("<html> (this)] is some text</html>")
 puts "* You have a syntax error: there is an unexpected ] where there is nothing to close."
-puts check_syntax("[(this] is some text")
+puts check_syntax("<html> [(this] is some text</html>")
 puts "* You have a syntax error: there is an unexpected ] where there should be a )"
-puts check_syntax("[this][ is some text")
+puts check_syntax("<html> [this][ is some text</html>")
 puts "* You have a syntax error: the string ended without a closing ]"
-puts check_syntax("[this] is some text")
+puts check_syntax("<html> [this] is some text</html>")
+puts "* You have a syntax error: the string ended without a closing >"
